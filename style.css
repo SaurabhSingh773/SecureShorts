@@ -1,0 +1,181 @@
+/* Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a1411;
+    color: #1d1a1a;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #00796b;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+    font-family: 'Poppins', sans-serif; /* Apply the new font */
+    font-weight: 600;
+}
+
+/* Main Content Styling */
+main {
+    width: 100%;
+    max-width: 800px; /* Increased max-width for larger content area */
+}
+
+/* Row Layout for Forms */
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-item {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 30px; /* Increased padding for bigger boxes */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 350px; /* Increased max-width for bigger boxes */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.form-item:hover {
+    background-color: #e0f2f1; /* Light green background on hover */
+    transform: translateY(-5px); /* Slight movement upwards */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for highlighting */
+}
+
+/* Forms and Buttons */
+input[type="text"] {
+    padding: 15px; /* Increased padding */
+    font-size: 1.2em; /* Increased font size */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 15px; /* Increased margin */
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #00796b;
+}
+
+button {
+    padding: 15px; /* Increased padding */
+    font-size: 1.2em; /* Increased font size */
+    color: #ffffff;
+    background-color: #00796b;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+/* Output Sections */
+.output, .redirect-output, .url-info-output {
+    background-color: #ffffff;
+    padding: 30px; /* Increased padding */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px; /* Increased top margin */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.output:hover, .redirect-output:hover, .url-info-output:hover {
+    background-color: #e0f2f1; /* Light green background on hover */
+    transform: translateY(-5px); /* Slight movement upwards */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for highlighting */
+}
+
+/* QR Code Display */
+.qr-code {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.qr-code {
+    display: grid;
+    grid-template-columns: repeat(29, 12px); /* Increased cell size */
+    gap: 1px;
+}
+
+.qr-cell {
+    width: 12px; /* Increased cell size */
+    height: 12px; /* Increased cell size */
+    background-color: white;
+}
+
+.qr-cell.filled {
+    background-color: black;
+}
+
+/* Redirect Chain */
+#redirect-chain {
+    list-style: none;
+    padding-left: 0;
+}
+
+#redirect-chain li {
+    padding: 12px 0; /* Increased padding */
+    border-bottom: 1px solid #ddd;
+}
+
+#redirect-chain li:last-child {
+    border-bottom: none;
+}
+
+/* URL Info Display */
+.url-info-output p {
+    font-size: 1.1em; /* Increased font size */
+    margin-bottom: 12px; /* Increased margin */
+}
+
+.url-info-output p strong {
+    color: #00796b;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5em; /* Adjust font size for smaller screens */
+    }
+    
+    main {
+        width: 90%;
+    }
+    
+    .row {
+        flex-direction: column;
+    }
+
+    .form-item {
+        max-width: 100%;
+    }
+
+    button, input[type="text"] {
+        font-size: 1.2em; /* Increased font size */
+    }
+}

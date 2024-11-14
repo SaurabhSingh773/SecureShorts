@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureShort</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>SecureShort</h1>
+    </header>
+
+    <main>
+        <!-- First Row: URL Shortener and Malicious URL Checker -->
+        <div class="row">
+            <!-- URL Shortener Form -->
+            <form id="url-form" class="form-item">
+                <input type="text" id="url-input" placeholder="Enter URL to shorten" required>
+                <button type="button" onclick="shortenURL()">Shorten URL</button>
+            </form>
+
+            <!-- Malicious URL Checker Form -->
+            <form id="malicious-url-form" class="form-item">
+                <input type="text" id="malicious-url-input" placeholder="Enter URL to check for malicious content" required>
+                <button type="button" onclick="checkMaliciousURL()">Check URL</button>
+            </form>
+        </div>
+
+        <!-- Second Row: Redirect Checker and URL Info -->
+        <div class="row">
+            <!-- URL Redirect Checker Form -->
+            <form id="redirect-url-form" class="form-item">
+                <input type="text" id="redirect-url-input" placeholder="Enter URL to check redirects" required>
+                <button type="button" onclick="checkRedirects()">Check Redirects</button>
+            </form>
+
+            <!-- URL Info Form -->
+            <form id="url-info-form" class="form-item">
+                <input type="text" id="url-info-input" placeholder="Enter URL to get information" required>
+                <button type="button" onclick="getURLInfo()">Get URL Info</button>
+            </form>
+        </div>
+
+        <!-- Output Sections -->
+        <div class="output" id="output" style="display: none;">
+            <h2>Shortened URL:</h2>
+            <p id="shortened-url"></p>
+            <h2>QR Code:</h2>
+            <div id="qr-code" class="qr-code"></div>
+        </div>
+
+        <div class="redirect-output" id="redirect-output" style="display: none;">
+            <h2>Redirect Chain:</h2>
+            <ul id="redirect-chain"></ul>
+        </div>
+
+        <div class="url-info-output" id="url-info-output" style="display: none;">
+            <h2>Link Information:</h2>
+            <p><strong>Title:</strong> <span id="link-title">Loading...</span></p>
+            <p><strong>Description:</strong> <span id="link-description">Loading...</span></p>
+            <p><strong>URL:</strong> <span id="link-url">Loading...</span></p>
+            <p><strong>Effective URL:</strong> <span id="link-effective-url">Loading...</span></p>
+            <p><strong>Redirections:</strong> <span id="link-redirections">None</span></p>
+            <p><strong>Safe Browsing:</strong> <span id="link-safe-browsing">Unavailable</span></p>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
